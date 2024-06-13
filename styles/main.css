@@ -1,0 +1,57 @@
+/* main.css */
+@import './components/header.css';
+@import './components/footer.css';
+
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    padding: 2rem;
+}
+
+#welcome {
+    text-align: center;
+    padding: 2rem 0;
+    background-color: #f4f4f4;
+    margin-bottom: 2rem;
+}
+
+#features {
+    padding: 2rem 0;
+}
+
+#features ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#features ul li {
+    background-color: #e4e4e4;
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+    border-radius: 5px;
+}
+
+.hidden {
+    display: none;
+}
+#login-register {
+    display: flex;
+    justify-content: space-around;
+    padding: 2rem 0;
+}
+form {
+    display: flex;
+    flex-direction: column;
+}
+form label, form input {
+    margin: 0.5rem 0;
+}
+#user-info {
+    float: right;
+    margin-right: 2rem;
+}
