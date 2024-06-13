@@ -21,3 +21,5 @@ export function getUser() {
 export function logout() {
     localStorage.removeItem('user');
 }
+
+

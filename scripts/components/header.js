@@ -1,5 +1,5 @@
 import { createElement } from '../utils/domUtils.js';
-import { navigateTo } from '../services/initService.js';
+import { navigateTo } from '../services/navigateService.js';
 import { getUser, logout } from '../services/authService.js';
 import { handleLogout } from '../app.js';
 

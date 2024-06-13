@@ -1,7 +1,7 @@
 import { createHeader, updateHeader } from './components/header.js';
 import { createFooter } from './components/footer.js';
-import { getUser, logout } from './services/authService.js';
-import { navigateTo } from './services/initService.js';
+import { getUser } from './services/authService.js';
+import { navigateTo } from './services/navigateService.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     createHeader();
