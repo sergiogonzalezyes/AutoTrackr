@@ -1,11 +1,12 @@
 import { homeTemplate } from '../components/home.js';
-import { logMaintenanceTemplate } from '../components/logMaintenance.js';
 import { viewCarsTemplate } from '../components/viewCars.js';
 import { loginTemplate } from '../components/login.js';
 import { registerTemplate } from '../components/register.js';
 import { loginListeners } from './loginService.js';
 import { registerListeners } from './registerService.js';
 import { loadCars } from './carService.js';
+import { logMaintenanceTemplate, renderLogs } from '../components/logMaintenance.js';
+import { maintenanceLogs } from '../services/maintenanceService.js';
 
 const cars = loadCars();
 
@@ -21,7 +22,9 @@ export function navigateTo(section) {
         'register': registerTemplate
     };
 
-    if (typeof sections[section] === 'string') {
+    if (typeof sections[section] === 'function') {
+        mainContent.appendChild(sections[section]());
+    } else if (typeof sections[section] === 'string') {
         mainContent.innerHTML = sections[section];
     } else if (sections[section] instanceof HTMLElement) {
         mainContent.appendChild(sections[section]);
@@ -29,8 +32,15 @@ export function navigateTo(section) {
         mainContent.innerHTML = sections.home;
     }
 
+    if (section === 'log-maintenance') {
+        renderLogs(maintenanceLogs);  // Ensure logs are rendered after template is appended
+    }
+
     if (section === 'login' || section === 'register') {
-        loginListeners();
-        registerListeners();
+        if (section === 'login') {
+            loginListeners();
+        } else {
+            registerListeners();
+        }
     }
 }

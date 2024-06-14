@@ -4,6 +4,7 @@
 @import './components/login.css';
 @import './components/register.css';
 @import './components/viewCars.css';
+@import './components/maintenance.css';
 
 /* General styles */
 body {

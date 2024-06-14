@@ -3,21 +3,28 @@
 // Create a function called createElement that takes a tag, attributes, and children as arguments. 
 // The function should create an element with the given tag, set the attributes on the element, 
 // and append the children to the element. The function should return the created element.
-export function createElement(tag, attributes = {}, ...children) {
+// utils/domUtils.js
+// utils/domUtils.js
+export function createElement(tag, attributes, ...children) {
     const element = document.createElement(tag);
-    for (const [key, value] of Object.entries(attributes)) {
-        element.setAttribute(key, value);
+    for (const key in attributes) {
+        if (attributes.hasOwnProperty(key)) {
+            element.setAttribute(key, attributes[key]);
+        }
     }
     children.forEach(child => {
-        if (typeof child === 'string') {
+        if (typeof child === 'string' || typeof child === 'number') {
             element.appendChild(document.createTextNode(child));
-        } else {
+        } else if (child instanceof HTMLElement) {
             element.appendChild(child);
+        } else if (Array.isArray(child)) {
+            child.forEach(nestedChild => element.appendChild(nestedChild));
         }
     });
-    // console.log(element)
     return element;
 }
+
+
 
 // Create a function called elementToString that takes an element as an argument.
 // The function should create a container div, append a clone of the element to the container,
