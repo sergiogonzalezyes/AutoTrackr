@@ -32,12 +32,12 @@ Thumbs.db
 *.bak
 
 # Ignore AutoTrackrAPI specific files
-AutoTrackrAPI/bin/
-AutoTrackrAPI/obj/
+/AutoTrackrAPI/bin/
+/AutoTrackrAPI/obj/
 
 .vs/
 
 *.user
 
-AutoTrackrAPI/appsettings.Development.json
-AutoTrackrAPI/appsettings.json
+/AutoTrackrAPI/appsettings.Development.json
+/AutoTrackrAPI/appsettings.json
