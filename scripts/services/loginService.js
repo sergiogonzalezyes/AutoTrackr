@@ -7,12 +7,21 @@ export function loginListeners() {
     const loginLink = document.getElementById('login-link');
 
     if (loginForm) {
-        loginForm.addEventListener('submit', (e) => {
+        loginForm.addEventListener('submit', async (e) => {
             e.preventDefault();
+            
             const username = document.getElementById('username').value;
             const password = document.getElementById('password').value;
-            login(username, password);
-            handleLogin(); // Re-create the header and re-initialize the app
+
+            try {
+                const user = await login(username, password);
+                handleLogin(); // Re-create the header and re-initialize the app
+                // Optionally redirect or update UI after successful login
+            } catch (error) {
+                console.error('Login error:', error);
+                // Optionally handle/display the error message
+                alert('Login failed. Please try again.');
+            }
         });
     }
 

@@ -19,8 +19,8 @@ export function updateHeader(user) {
     const navLinks = user
         ? [
             createElement('li', {}, createElement('a', { href: '#home' }, 'Home')),
-            createElement('li', {}, createElement('a', { href: '#log-maintenance' }, 'Log Maintenance')),
             createElement('li', {}, createElement('a', { href: '#view-cars' }, 'View Cars')),
+            createElement('li', {}, createElement('a', { href: '#log-maintenance' }, 'Log Maintenance')),
             createElement('li', {}, createElement('button', { id: 'logout-button' }, 'Logout'))
           ]
         : [
