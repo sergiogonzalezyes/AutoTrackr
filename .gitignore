@@ -34,10 +34,7 @@ Thumbs.db
 # Ignore AutoTrackrAPI specific files
 /AutoTrackrAPI/bin/
 /AutoTrackrAPI/obj/
-
-.vs/
-
+/AutoTrackrAPI/.vs/
 *.user
-
-/AutoTrackrAPI/appsettings.Development.json
-/AutoTrackrAPI/appsettings.json
+AutoTrackrAPI/appsettings.Development.json
+AutoTrackrAPI/appsettings.json
